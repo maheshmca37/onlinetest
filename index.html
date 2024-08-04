@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generate PDF with pdf-lib</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js"></script>
+</head>
+<body>
+    <button id="generatePdf">Generate PDF</button>
+
+    <script>
+        document.getElementById('generatePdf').addEventListener('click', async function() {
+            const { PDFDocument, rgb } = window.PDFLib;
+            const fontUrl = 'C:\Users\mahesh\Downloads\Noto_Sans_Telugu.zip\NotoSansTelugu-VariableFont_wdth,wght.ttf'; // Use your local font file path here
+            const fontBytes = await fetch(fontUrl).then(res => res.arrayBuffer());
+
+            // Create a new PDF document
+            const pdfDoc = await PDFDocument.create();
+            const page = pdfDoc.addPage([600, 800]);
+
+            // Embed the custom font
+            const customFont = await pdfDoc.embedFont(fontBytes);
+
+            // Create a font size and color
+            const fontSize = 12;
+            const color = rgb(0, 0, 0);
+
+            const questions = [
+                {
+                    "qid": 1,
+                    "qname": "ప్రపంచంలో అతిపెద్ద నది ఏది?",
+                    "qopt1": "థేమ్స్ నది",
+                    "qopt2": "నైలు నది",
+                    "qopt3": "అమెజాన్ నది",
+                    "qopt4": "గంగా నది",
+                    "qans": "3",
+                    "qhint": "Sol : THIS IS THE HINT FOR QUESTION 1 "
+                },
+                // Add more questions here
+            ];
+
+            let y = 750; // Start position from top
+            const lineHeight = 15;
+
+            questions.forEach((question, index) => {
+                if (y < 50) { // Add new page if space is running out
+                    page = pdfDoc.addPage([600, 800]);
+                    y = 750;
+                }
+
+                page.drawText(`ప్రశ్న ${index + 1}: ${question.qname}`, { x: 50, y, size: fontSize, font: customFont, color });
+                y -= lineHeight;
+                page.drawText(`1. ${question.qopt1}`, { x: 50, y, size: fontSize, font: customFont, color });
+                y -= lineHeight;
+                page.drawText(`2. ${question.qopt2}`, { x: 50, y, size: fontSize, font: customFont, color });
+                y -= lineHeight;
+                page.drawText(`3. ${question.qopt3}`, { x: 50, y, size: fontSize, font: customFont, color });
+                y -= lineHeight;
+                page.drawText(`4. ${question.qopt4}`, { x: 50, y, size: fontSize, font: customFont, color });
+                y -= lineHeight;
+                page.drawText(`సరైన సమాధానం: ${question.qans}`, { x: 50, y, size: fontSize, font: customFont, color });
+                y -= lineHeight;
+                page.drawText(`హింట్: ${question.qhint}`, { x: 50, y, size: fontSize, font: customFont, color });
+                y -= lineHeight * 2;
+            });
+
+            // Serialize the document to bytes and trigger download
+            const pdfBytes = await pdfDoc.save();
+            const blob = new Blob([pdfBytes], { type: 'application/pdf' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'questions.pdf';
+            a.click();
+        });
+    </script>
+</body>
+</html>
