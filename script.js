@@ -27,7 +27,7 @@ document.getElementById("validationForm").addEventListener("submit", function(ev
 
     // If all inputs are valid, show success
     if (valid) {
-        window.location.href = "examSchedule.html";
+        window.location.href = "examschedule.html";
         //alert("Form submitted successfully!");
         // Add form submission logic here (e.g., send data to the server)
     }
