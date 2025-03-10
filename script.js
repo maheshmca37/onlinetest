@@ -1,64 +1,42 @@
-function downloadHTML(content, filename) {
-    try {
-        const blob = new Blob([content], { type: 'text/html' });
-        const link = document.createElement('a');
-        link.href = URL.createObjectURL(blob);
-        link.download = filename;
-        document.body.appendChild(link); // Append the link to the body
-        link.click();
-        document.body.removeChild(link); // Remove the link after download
-    } catch (error) {
-        console.error('Failed to download HTML file:', error);
+document.getElementById("validationForm").addEventListener("submit", function(event) {
+    event.preventDefault();  // Prevent form submission
+
+    let valid = true;
+
+    // Clear previous error messages
+    document.querySelectorAll(".error-message").forEach(function(span) {
+        span.textContent = "";
+    });
+
+   
+
+    // Phone Number Validation (must be exactly 10 digits)
+    let phone = document.getElementById("phone").value;
+    let phonePattern = /^[0-9]{10}$/;
+    if (!phonePattern.test(phone)) {
+        document.getElementById("phoneError").textContent = "Phone number must be exactly 10 digits.";
+        valid = false;
     }
-}
 
-function generateQuestionHTML(questionText, options) {
-    return `
-    <div class="question">
-        <p>${questionText}</p>
-        <ul class="options">
-            ${options.map(option => `<li>${option}</li>`).join('')}
-        </ul>
-    </div>
-    `;
-}
+    // District Validation
+    let district = document.getElementById("district").value;
+    if (district === "") {
+        document.getElementById("districtError").textContent = "Please select a district.";
+        valid = false;
+    }
 
-const questionsHTML = `
-<!DOCTYPE html>
-<html lang="te">
-<head>
-    <meta charset="UTF-8">
-    <title>Response Sheet</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-        }
-        .question {
-            margin-bottom: 20px;
-        }
-        .question p {
-            font-size: 18px;
-        }
-        .options {
-            list-style-type: none;
-            padding: 0;
-        }
-        .options li {
-            margin-bottom: 10px;
-        }
-    </style>
-</head>
-<body>
-    <h1>Response Sheet</h1>
-    ${generateQuestionHTML(
-        'వజ్రాల నగరం మరియు సిల్క్ సిటీ ఆఫ్ ఇండియా గా పేరుగాంచిన భారతీయ నగరం?   ఆరావళి పర్వతాలు ఈ క్రింది ఏ రాష్ట్రంలో కలవు?    భారత జాతీయ పాడి పరిశోధన సంస్థ ఎక్కడ ఉంది.  चिट्ठी-डाकिए ने दरवाज़े पर दस्तक दी तो नन्हों सहुआइन ने दाल की बटली पर यों कलछी मारी जैसे सारा कसूर बटुली का ही है। हल्दी से रँगे हाथ में कलछी पकड़े वे रसोई से बाहर आई और ग़ुस्से के मारे जली-भुनी, दो का एक डग मारती ड्योढ़ी के पास पहुँची। “कौन है रे!”',
-        ['ఎంపిక 1', 'ఎంపిక 2', 'ఎంపిక 3', 'ఎంపిక 4']
-    )}
-    <!-- Repeat for other questions -->
-</body>
-</html>
-`;
+    // If all inputs are valid, show success
+    if (valid) {
+        window.location.href = "examSchedule.html";
+        //alert("Form submitted successfully!");
+        // Add form submission logic here (e.g., send data to the server)
+    }
+});
 
-document.getElementById('html-btn').addEventListener('click', () => {
-    downloadHTML(questionsHTML, 'response-sheet.html');
+// Phone input event: Allow only numeric input and prevent non-numeric characters
+document.getElementById("phone").addEventListener('keydown', function(event) {
+    // Allow backspace, delete, and numbers
+    if (!((event.key >= '0' && event.key <= '9') || event.key === 'Backspace' || event.key === 'Delete')) {
+        event.preventDefault();
+    }
 });
