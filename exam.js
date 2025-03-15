@@ -130,7 +130,7 @@ function setImageByID(qimgid){
   const img = document.getElementById('qimg');
   if(qimgid>0){
     
-    const imgpath = "/blob/main/"+qimgid+".jpg";
+    const imgpath = "blob/main/"+qimgid+".jpg";
     img.src = imgpath; // Adjust the path accordingly
     img.style.display ='block';
     
