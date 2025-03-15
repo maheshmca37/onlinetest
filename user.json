@@ -1,11 +1,11 @@
 [
 
     {
-        "examid":"NMMS",
+        "examid":"NMMS MOC TEST -1",
         "usr": "m",
-        "pwrd": "mah",
-        "maxquestions":"30",
-        "duration": "1800"
+        "pwrd": "mm",
+        "maxquestions":"10",
+        "duration": "600"
         
     }
 
