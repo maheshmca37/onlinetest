@@ -130,7 +130,7 @@ function setImageByID(qimgid){
   const img = document.getElementById('qimg');
   if(qimgid>0){
     
-    const imgpath = "blob/main/"+qimgid+".jpg";
+    const imgpath = "./"+qimgid+".jpg";
     img.src = imgpath; // Adjust the path accordingly
     img.style.display ='block';
     
@@ -233,7 +233,7 @@ document.getElementById("download-pdf").addEventListener("click", function(event
     canvas.height = imgElement.naturalHeight;
     canvas.width = imgElement.naturalWidth;
     ctx.drawImage(imgElement, 0, 0);
-    callback(canvas.toDataURL("image/jpeg")); // Or use the correct mime type
+    callback(canvas.toDataURL("image/jpg")); // Or use the correct mime type
   }
 
   // Loop through all questions and process images
@@ -244,7 +244,7 @@ document.getElementById("download-pdf").addEventListener("click", function(event
 
     // If the question has an image, load and display it first
     if (q.imgid > 0) {
-      const imgpath = `${q.imgid}.jpeg`;  // Assuming image is available via this path
+      const imgpath = `${q.imgid}.jpg`;  // Assuming image is available via this path
       const imgElement = new Image();
       imgElement.src = imgpath;
 
