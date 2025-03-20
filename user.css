@@ -49,4 +49,24 @@ body {
   input[type="submit"]:hover {
     background-color: #45a049;
   }
-  
+  .scrolling-message {
+    background-color: #4CAF50; /* Green background */
+    color: rgb(47, 5, 106); /* White text */
+    padding: 10px;
+    white-space: nowrap; /* Prevents line breaks */
+    overflow: hidden;
+    box-sizing: border-box;
+    animation: scroll 25s linear infinite; /* Scroll animation */
+    width: 100%; /* Full width */
+    text-align: center; /* Center text */
+    position: absolute; /* Positioning below the form */
+    bottom: 20px; /* Distance from bottom */
+}
+@keyframes scroll {
+    0% {
+        transform: translateX(100%); /* Start from right */
+    }
+    100% {
+        transform: translateX(-100%); /* Move to left */
+    }
+}

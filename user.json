@@ -1,11 +1,11 @@
 [
 
     {
-        "examid":"NMMS MOC TEST -1",
+        "examid":"POLYCET",
         "usr": "m",
-        "pwrd": "mm",
-        "maxquestions":"10",
-        "duration": "600"
+        "pwrd": "mah",
+        "maxquestions":"25",
+        "duration": "1500"
         
     }
 
