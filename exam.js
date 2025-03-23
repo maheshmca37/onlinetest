@@ -608,7 +608,7 @@ function setAnalysis(){
   const closebtn = document.getElementById("close-btn");
     closebtn.style.display = 'none';
 
-  timerElement.textContent = '00:00:00';
+  timerElement.textContent = 'Time: 0:0:0';
 
   
   const form1=document.getElementById('radio-btns');
@@ -760,7 +760,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
       if (countdownTime <= 0) {
           clearInterval(timerInterval);
-          timerElement.textContent = '00:00:00';
+          timerElement.textContent = 'Time: 0:0:0';
           onTimerEnd();
           return;
       }
@@ -771,7 +771,7 @@ document.addEventListener('DOMContentLoaded', function() {
       const secs = countdownTime % 60;
 
       timerElement.textContent = 
-          `${hrs.toString().padStart(2, '0')}:${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
+          `Remaining : ${hrs.toString().padStart(2, '0')}:${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
   }
 
   function onTimerEnd() {

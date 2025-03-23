@@ -11,6 +11,11 @@
     box-sizing: border-box; /* Include padding in width calculations */
 }
 
+#timer {
+    color: red;
+}
+
+
 .exam {
     flex: 25%;
     background-color: #e6eef0; /* Example background color */
