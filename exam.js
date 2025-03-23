@@ -216,7 +216,7 @@ document.getElementById("download-pdf").addEventListener("click", function(event
   const attempt = "Attempted : " + attmptd;
   const resmarks = "Correct : " + CorrectdCount;
   const wrmarks = "Wrong : " + WrongCount;
-  const examresult = "Note : Exam Result/Ranks of all students will be provided tomorrow";
+  const examresult = "Note : Exam Result/State Ranks of all students will be provided tomorrow";
 
   content += `<h2>${exname}</h2>`;
   content += `<p><strong>${sname}</strong></p>`;
@@ -262,7 +262,12 @@ document.getElementById("download-pdf").addEventListener("click", function(event
     const userSelection = selectedOptions[q.qid];
     content += `<li>Your Selection: Option ${userSelection}</li>`;
     content += `<li>Answer: Option ${q.qans}</li>`;
-    content += `<li>Hint: ${q.qhint}</li>`;
+    if (q.qhint.length > 3) {
+      content += `<li>Hint: ${q.qhint.replace(/\n/g, '<br>')}</li>`;
+    } else {
+      content += `<li>Hint: ${q.qhint}</li>`;  // If it's 3 characters or less, just display as is.
+    }
+    
     content += `</ul>`;
     content += `</div><br><br>`;
   }
