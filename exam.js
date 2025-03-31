@@ -350,6 +350,8 @@ function replaceSymbols(text) {
     .replace(/≠/g, '&ne;')     // Replace ≠ (Not equal)
     .replace(/≥/g, '&ge;')     // Replace ≥ (Greater than or equal)
     .replace(/°/g, '&deg;')   // Replace ° (Degree symbol)
+    .replace(/²/g, '&sup2;')   // Replace ² (Square)
+    .replace(/³/g, '&sup3;')
     .replace(/≤/g, '&le;');    // Replace ≤ (Less than or equal)
 }
 

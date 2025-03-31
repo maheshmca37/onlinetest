@@ -12,24 +12,24 @@
   },
    {
       "qid": "2",
-      "qname": "If 5 is a zero of the quadratic polynomial, x^2 - kx - 15 then the value of k : ",
+      "qname": "If 5 is a zero of the quadratic polynomial, x² - kx - 15 then the value of k : ",
       "qopt1": "2",
       "qopt2": "-2",
       "qopt3": "4",
       "qopt4": "-4",
       "qans": "1",
-      "qhint": "The given quadratic is:\n  x^2-kx-15\n Since 5 is a zero, substituting x=5 into the polynomial should result in 0:\n   5^2-k(5)-15=0\n     25-5k-15=0\n    10-5k=0\n         5k=10\n          k=2",
+      "qhint": "The given quadratic is:\n  x²-kx-15\n Since 5 is a zero, substituting x=5 into the polynomial should result in 0:\n   5²-k(5)-15=0\n     25-5k-15=0\n    10-5k=0\n         5k=10\n          k=2",
       "imgid": "0"
   },
   {
       "qid": "3",
-      "qname": "The sum and product of the zeroes of the polynomial x^2 - 6x + 8 are respectivell : ",
+      "qname": "The sum and product of the zeroes of the polynomial x² - 6x + 8 are respectivell : ",
       "qopt1": "-3/2 and -1",
       "qopt2": "6 and 8",
       "qopt3": "-3/2 and 1",
       "qopt4": "3/2 and 1",
       "qans": "2",
-      "qhint": "For a quadratic equation form ax^2+bx+c,\n Given equation x^2-6x+8\n a=1,b=-6,c=8\n  The sum of zeros:\n -(b/a)=-(-6/1)=6\n Product of the zeros:\n  c/a=8/1=8",
+      "qhint": "For a quadratic equation form ax²+bx+c,\n Given equation x²-6x+8\n a=1,b=-6,c=8\n  The sum of zeros:\n -(b/a)=-(-6/1)=6\n Product of the zeros:\n  c/a=8/1=8",
       "imgid": "0"
   },
    {
@@ -57,23 +57,23 @@
   {
       "qid": "6",
       "qname": "Which of the following equations has the sum of its roots as 3 ?",
-      "qopt1": "3x^2 - 3x + 3 = 0",
-      "qopt2": "2x^2 - 3x + 6 = 0",
-      "qopt3": "-x^2 + 3x - 3 = 0",
-      "qopt4": " x^2 + 5x + 6 = 0",
+      "qopt1": "3x² - 3x + 3 = 0",
+      "qopt2": "2x² - 3x + 6 = 0",
+      "qopt3": "-x² + 3x - 3 = 0",
+      "qopt4": " x² + 5x + 6 = 0",
       "qans": "3",
-      "qhint": "Quadratic equation form:\n    ax^2+bx+c=0\n The sum of the roots:\n      S= -(b/a)\n Analyze the options\n Option (3)\n     -x^2+3x-3=0\n The sum of the roots=-(3/-1)=3",
+      "qhint": "Quadratic equation form:\n    ax²+bx+c=0\n The sum of the roots:\n      S= -(b/a)\n Analyze the options\n Option (3)\n     -x²+3x-3=0\n The sum of the roots=-(3/-1)=3",
       "imgid": "0"
     },
    {
       "qid": "7",
-      "qname": "The condition for equation ax^2 + bx + c = 0 to be quadratic is",
+      "qname": "The condition for equation ax² + bx + c = 0 to be quadratic is",
       "qopt1": "a < 0",
       "qopt2": "a ≠ 0",
       "qopt3": "a ≠ 0, b ≠ 0",
       "qopt4": "a > 0",
       "qans": "2",
-      "qhint": "the condition for equation ax^2+bx+c=0 to be quadratic is: a≠0 \n For a quadratic equation,the coefficient of x^2(which is a) must be non-zero.",
+      "qhint": "the condition for equation ax²+bx+c=0 to be quadratic is: a≠0 \n For a quadratic equation,the coefficient of x²(which is a) must be non-zero.",
       "imgid": "0"
     },  
      {
@@ -95,7 +95,7 @@
       "qopt3": "8.5 cm",
       "qopt4": "7.5 cm",
       "qans": "4",
-      "qhint": "By using Pythagorean theorem ABC:\n AC^2=AB^2+BC^2\n  =(12)^2+9^2\n  =144+81\n  =225\n  So, AC=15\n Than AE=(1/2)AC\n = 15/2\n  So, AE = 7.5cm",
+      "qhint": "By using Pythagorean theorem ABC:\n AC²=AB²+BC²\n  =(12)²+9²\n  =144+81\n  =225\n  So, AC=15\n Than AE=(1/2)AC\n = 15/2\n  So, AE = 7.5cm",
       "imgid": "0"
     },
     {
@@ -117,7 +117,7 @@
       "qopt3": "5",
       "qopt4": "none of these",
       "qans": "3",
-      "qhint": "Distance formula:  d=√{(x2-x1)^2+(y2-y1)^2}\n  d=√{(4-0)^2+(3-0)^2}\n =√(16+9)\n =√25\n =5",
+      "qhint": "Distance formula:  d=√{(x2-x1)²+(y2-y1)²}\n  d=√{(4-0)²+(3-0)²}\n =√(16+9)\n =√25\n =5",
       "imgid": "0"
     },
     {
@@ -172,7 +172,7 @@
       "qopt3": "6 cm",
       "qopt4": "8 cm",
       "qans": "4",
-      "qhint": "Let Circle center O,chord centre Z\n Given AZ=8,Radius=5(OC)\n  Then distance of  OZ= AZ-Radius\n OZ=8-5=3\n Using Pythagorean theorem \n The length of (OC)^2=(OZ)^2+(CZ)^2\n                 25=9+CZ^2\n               CZ^2=16\n                  CZ=4 cm\n Length of chord = 2 X CZ( because CD is parallel of tangents XAY)\n  =2 X 4\n  =8cm\n ",
+      "qhint": "Let Circle center O,chord centre Z\n Given AZ=8,Radius=5(OC)\n  Then distance of  OZ= AZ-Radius\n OZ=8-5=3\n Using Pythagorean theorem \n The length of (OC)²=(OZ)²+(CZ)²\n                 25=9+CZ²\n               CZ²=16\n                  CZ=4 cm\n Length of chord = 2 X CZ( because CD is parallel of tangents XAY)\n  =2 X 4\n  =8cm\n ",
       "imgid": "0"
     },
     {
@@ -205,7 +205,7 @@
       "qopt3": "1 : 22",
       "qopt4": "11 : 14",
       "qans": "2",
-      "qhint": "Let: r be the radius of the circle and a be the side length of the square.\n Perimeter: The perimeter of the circle (circumference) is 2πr, and the perimeter of the square is 4a. \n Equal Perimeters: We're given that 2πr = 4a. \n Solve for a: Simplifying the equation, we get a = (πr)/2. \n Area of Circle: The area of the circle is πr^2. \n Area of Square: The area of the square is a^2 = ((πr)/2)^2 = (π^2r^2)/4. \n Ratio of Areas: The ratio of the area of the circle to the area of the square is (πr^2) : ((π^2r^2)/4) = 4 : π. \n plify the Ratio: Using the approximation of π as 22/7, we get 4 : (22/7) = 28 : 22 = 14 : 11. \n",
+      "qhint": "Let: r be the radius of the circle and a be the side length of the square.\n Perimeter: The perimeter of the circle (circumference) is 2πr, and the perimeter of the square is 4a. \n Equal Perimeters: We're given that 2πr = 4a. \n Solve for a: Simplifying the equation, we get a = (πr)/2. \n Area of Circle: The area of the circle is πr². \n Area of Square: The area of the square is a² = ((πr)/2)² = (π²r²)/4. \n Ratio of Areas: The ratio of the area of the circle to the area of the square is (πr²) : ((π²r²)/4) = 4 : π. \n plify the Ratio: Using the approximation of π as 22/7, we get 4 : (22/7) = 28 : 22 = 14 : 11. \n",
       "imgid": "0"
     },
     {
@@ -216,7 +216,7 @@
       "qopt3": "48150 cm3.",
       "qopt4": "4715 cm3.",
       "qans": "2",
-      "qhint": "Height of bucket (h)=45cm\n r1 and r2 respectively 28 cm ,7 cm\n Volume of frustum of cone:\n   V=  (1/3)πh(r1^2+r2^2+r1r2)\n V= (1/3)π(45)(784+49+196)\n    =(1/3)(3.14)(45)(1029)\n   =48510cm^3",
+      "qhint": "Height of bucket (h)=45cm\n r1 and r2 respectively 28 cm ,7 cm\n Volume of frustum of cone:\n   V=  (1/3)πh(r1²+r2²+r1r2)\n V= (1/3)π(45)(784+49+196)\n    =(1/3)(3.14)(45)(1029)\n   =48510cm^3",
       "imgid": "0"
     },
    {
@@ -227,7 +227,7 @@
       "qopt3": "2/3 h",
       "qopt4": "3/2 h",
       "qans": "3",
-      "qhint": "The volume of solid=3*volume of cone\n Volume of cone+volume of cylinder=3 * volume of cone\n Volume of cylinder=2 * volume of cone\n πr^2H=2*(1/3)(πr^2h)\n        H=(2/3)h\n  The height of cylinder (2/3)h ",
+      "qhint": "The volume of solid=3*volume of cone\n Volume of cone+volume of cylinder=3 * volume of cone\n Volume of cylinder=2 * volume of cone\n πr²H=2*(1/3)(πr²h)\n        H=(2/3)h\n  The height of cylinder (2/3)h ",
       "imgid": "0"
     }, 
      {
@@ -238,7 +238,7 @@
       "qopt3": "Rs. 220",
       "qopt4": "Rs. 405",
       "qans": "4",
-      "qhint": "Surface area of walls= 2*(l*h+b*h)\n =2(5*3+4*3)\n =2(15+12)\n=54m^2\n Total cost=54 * 7.50 = 405 Rs.",
+      "qhint": "Surface area of walls= 2*(l*h+b*h)\n =2(5*3+4*3)\n =2(15+12)\n=54m²\n Total cost=54 * 7.50 = 405 Rs.",
       "imgid": "0"
     },
     {
@@ -338,7 +338,7 @@
       "qopt3": "8800 W",
       "qopt4": "4400 W",
       "qans": "2",
-      "qhint": "P is the power consumed (in watts), \n P = V^2 / R \n = (220)^2 / 20  \n = 2420 W",
+      "qhint": "P is the power consumed (in watts), \n P = V² / R \n = (220)² / 20  \n = 2420 W",
       "imgid": "0"
     },
     
