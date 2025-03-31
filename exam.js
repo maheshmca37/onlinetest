@@ -201,7 +201,6 @@ function setLanguage(){
 }
 
 
-
 document.getElementById("download-pdf").addEventListener("click", function(event) {
   event.preventDefault(); // Prevent the default form submission or link behavior
   let content = [];
@@ -218,14 +217,15 @@ document.getElementById("download-pdf").addEventListener("click", function(event
   const wrmarks = "Wrong : " + WrongCount;
   const examresult = "Note : Exam Result/State Ranks of all students will be provided tomorrow";
 
-  content += `<h2>${exname}</h2>`;
-  content += `<p><strong>${sname}</strong></p>`;
-  content += `<p>${tmarks}</p>`;
-  content += `<p>${notattempt}</p>`;
-  content += `<p>${attempt}</p>`;
-  content += `<p>${resmarks}</p>`;
-  content += `<p>${wrmarks}</p>`;
-  content += `<p>${examresult}</p>`;
+  // Apply replaceSymbols to basic information
+  content += `<h2>${replaceSymbols(exname)}</h2>`;
+  content += `<p><strong>${replaceSymbols(sname)}</strong></p>`;
+  content += `<p>${replaceSymbols(tmarks)}</p>`;
+  content += `<p>${replaceSymbols(notattempt)}</p>`;
+  content += `<p>${replaceSymbols(attempt)}</p>`;
+  content += `<p>${replaceSymbols(resmarks)}</p>`;
+  content += `<p>${replaceSymbols(wrmarks)}</p>`;
+  content += `<p>${replaceSymbols(examresult)}</p>`;
   content += '<br><br>';
 
   // Sort the loadedData based on qid (question id) to ensure the correct order
@@ -241,35 +241,6 @@ document.getElementById("download-pdf").addEventListener("click", function(event
       ctx.drawImage(imgElement, 0, 0);
       resolve(canvas.toDataURL("image/jpg"));
     });
-  }
-
-  // Function to add question HTML content (with or without image)
-  function addQuestionHTML(q, base64Image = '') {
-    const formattedQName = q.qname.replace(/<br\s*\/?>/gi, '\n');
-    content += `<div id="question_${q.qid}">`;
-
-    if (base64Image) {
-      content += `<img id="qimg_${q.qid}" src="${base64Image}" style="display:block;" />`;
-    }
-
-    content += `<h3>Q${q.qid}. ${formattedQName}</h3>`;
-    content += `<ul>`;
-    content += `<li>1. ${q.qopt1}</li>`;
-    content += `<li>2. ${q.qopt2}</li>`;
-    content += `<li>3. ${q.qopt3}</li>`;
-    content += `<li>4. ${q.qopt4}</li>`;
-
-    const userSelection = selectedOptions[q.qid];
-    content += `<li>Your Selection: Option ${userSelection}</li>`;
-    content += `<li>Answer: Option ${q.qans}</li>`;
-    if (q.qhint.length > 3) {
-      content += `<li>Hint: ${q.qhint.replace(/\n/g, '<br>')}</li>`;
-    } else {
-      content += `<li>Hint: ${q.qhint}</li>`;  // If it's 3 characters or less, just display as is.
-    }
-    
-    content += `</ul>`;
-    content += `</div><br><br>`;
   }
 
   // This function will process each question in sequence (keeping the order intact)
@@ -301,8 +272,53 @@ document.getElementById("download-pdf").addEventListener("click", function(event
   // Start processing questions
   processQuestions();
 
+  // Function to add question HTML content (with or without image)
+  function addQuestionHTML(q, base64Image = '') {
+    // Replace symbols in q.qname, q.qopt1, q.qopt2, q.qopt3, q.qopt4, and q.qhint
+    const formattedQName = replaceSymbols(q.qname).replace(/<br\s*\/?>/gi, '\n');
+    const formattedOpt1 = replaceSymbols(q.qopt1);
+    const formattedOpt2 = replaceSymbols(q.qopt2);
+    const formattedOpt3 = replaceSymbols(q.qopt3);
+    const formattedOpt4 = replaceSymbols(q.qopt4);
+    const formattedHint = replaceSymbols(q.qhint);
+
+    content += `<div id="question_${q.qid}">`;
+
+    if (base64Image) {
+      content += `<img id="qimg_${q.qid}" src="${base64Image}" style="display:block;" />`;
+    }
+
+    content += `<h3>Q${q.qid}. ${formattedQName}</h3>`;
+    content += `<ul>`;
+    content += `<li>1. ${formattedOpt1}</li>`;
+    content += `<li>2. ${formattedOpt2}</li>`;
+    content += `<li>3. ${formattedOpt3}</li>`;
+    content += `<li>4. ${formattedOpt4}</li>`;
+
+    const userSelection = selectedOptions[q.qid];
+    content += `<li>Your Selection: Option ${userSelection}</li>`;
+    content += `<li>Answer: Option ${q.qans}</li>`;
+
+    if (formattedHint.length > 3) {
+      content += `<li>Hint: ${formattedHint.replace(/\n/g, '<br>')}</li>`;
+    } else {
+      content += `<li>Hint: ${formattedHint}</li>`;  // If it's 3 characters or less, just display as is.
+    }
+
+    content += `</ul>`;
+    content += `</div><br><br>`;
+  }
+
   // Function to download the HTML file after all content has been processed
   function downloadHTML(content) {
+    console.log("Download function triggered");
+
+    // Check if the content has been properly populated
+    if (!content || content.length === 0) {
+      console.error("Content is empty or not generated correctly");
+      return;
+    }
+
     // Create a Blob from the content string
     const blob = new Blob([content], { type: 'text/html' });
 
@@ -321,6 +337,22 @@ document.getElementById("download-pdf").addEventListener("click", function(event
     document.body.removeChild(a);
   }
 });
+
+// Function to replace special characters with HTML entities
+function replaceSymbols(text) {
+  return text
+    .replace(/π/g, '&pi;')   // Replace π (Pi)
+    .replace(/√/g, '&radic;') // Replace √ (Square Root)
+    .replace(/θ/g, '&theta;') // Replace θ (Theta)
+    .replace(/α/g, '&alpha;') // Replace α (Alpha)
+    .replace(/△/g, '&#9650;') // Replace △ (Triangle symbol)
+    .replace(/∞/g, '&infin;')  // Replace ∞ (Infinity)
+    .replace(/≠/g, '&ne;')     // Replace ≠ (Not equal)
+    .replace(/≥/g, '&ge;')     // Replace ≥ (Greater than or equal)
+    .replace(/°/g, '&deg;')   // Replace ° (Degree symbol)
+    .replace(/≤/g, '&le;');    // Replace ≤ (Less than or equal)
+}
+
 
 
 function examSummaryReport(){

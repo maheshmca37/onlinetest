@@ -12,7 +12,7 @@
   },
    {
       "qid": "2",
-      "qname": "If 5 is a zero of the quadratic polynomial, x2 - kx - 15 then the value of k : ",
+      "qname": "If 5 is a zero of the quadratic polynomial, x^2 - kx - 15 then the value of k : ",
       "qopt1": "2",
       "qopt2": "-2",
       "qopt3": "4",
@@ -161,7 +161,7 @@
       "qopt3": "60°",
       "qopt4": "45°",
       "qans": "1",
-      "qhint": "h as the height of the tree\n l as the length of the shadow of the tree\n (Θ) as the angle of elevation of the sun\n  l=√3 •h\n Tan(Θ)=height of the tree/length of the shadow\n Tan(Θ)=h/(√3•h)\n Tan(Θ)=1/√3\n We know that:\n Tan(30°)=1/√3\n \n  The angle of elevation is 30°",
+      "qhint": "h as the height of the tree\n l as the length of the shadow of the tree\n (θ) as the angle of elevation of the sun\n  l=√3 * h\n Tan(θ)=height of the tree/length of the shadow\n Tan(θ)=h/(√3*h)\n Tan(θ)=1/√3\n We know that:\n Tan(30°)=1/√3\n \n  The angle of elevation is 30°",
       "imgid": "0"
     },
    {
@@ -194,7 +194,7 @@
       "qopt3": "42cm",
       "qopt4": "28cm  ",
       "qans": "4",
-      "qhint": "The circumference of a circle is given by C=2𝜋r, where r is the radius.\n The diameter of a circle is d=2r.\n The circumference exceeds the diameter by 120cm,   so c= d+120.\n Substitute\n 2𝜋r=2r+120\n    πr=r+60\n r(π-1)=60\n   r=60/(π-1)         ( take π=3.14)  \n   r=60/(3.14-1)\n  r=60/2.14\n r≈ 28.04",
+      "qhint": "The circumference of a circle is given by C=2πr, where r is the radius.\n The diameter of a circle is d=2r.\n The circumference exceeds the diameter by 120cm,   so c= d+120.\n Substitute\n 2πr=2r+120\n    πr=r+60\n r(π-1)=60\n   r=60/(π-1)         ( take π=3.14)  \n   r=60/(3.14-1)\n  r=60/2.14 \n = 28.04",
       "imgid": "0"
     },
     {
@@ -205,7 +205,7 @@
       "qopt3": "1 : 22",
       "qopt4": "11 : 14",
       "qans": "2",
-      "qhint": "Let: r be the radius of the circle and a be the side length of the square.\n Perimeter: The perimeter of the circle (circumference) is 2πr, and the perimeter of the square is 4a. \n Equal Perimeters: We're given that 2πr = 4a. \n Solve for a: Simplifying the equation, we get a = (πr)/2. \n Area of Circle: The area of the circle is πr². \n Area of Square: The area of the square is a² = ((πr)/2)² = (π²r²)/4. \n Ratio of Areas: The ratio of the area of the circle to the area of the square is (πr²) : ((π²r²)/4) = 4 : π. \n plify the Ratio: Using the approximation of π as 22/7, we get 4 : (22/7) = 28 : 22 = 14 : 11. \n",
+      "qhint": "Let: r be the radius of the circle and a be the side length of the square.\n Perimeter: The perimeter of the circle (circumference) is 2πr, and the perimeter of the square is 4a. \n Equal Perimeters: We're given that 2πr = 4a. \n Solve for a: Simplifying the equation, we get a = (πr)/2. \n Area of Circle: The area of the circle is πr^2. \n Area of Square: The area of the square is a^2 = ((πr)/2)^2 = (π^2r^2)/4. \n Ratio of Areas: The ratio of the area of the circle to the area of the square is (πr^2) : ((π^2r^2)/4) = 4 : π. \n plify the Ratio: Using the approximation of π as 22/7, we get 4 : (22/7) = 28 : 22 = 14 : 11. \n",
       "imgid": "0"
     },
     {
@@ -416,7 +416,7 @@
       "qopt3": "It reflects back along the same path.",
       "qopt4": "It diverges away from the principal focus. ",
       "qans": "2",
-      "qhint": "The refractive index (n) is calculated as: \n n = c div v \n = (3 * 10^8) div (2 * 10^8)  \n = 3 div 2 \n =1.5  ",
+      "qhint": "The refractive index (n) is calculated as: \n n = c / v \n = (3 * 10^8) / (2 * 10^8)  \n = 3 / 2 \n =1.5  ",
       "imgid": "0"
     },
      {
@@ -438,7 +438,7 @@
       "qopt3": "-2.5 m",
       "qopt4": "-0.4 m",
       "qans": "2",
-      "qhint": "The focal length (f) is the reciprocal of the power (P), \n P = 1\f \n  f = 1 div P \n = 1 div 2.5 \n = 0.4 m  ",
+      "qhint": "The focal length (f) is the reciprocal of the power (P), \n P = 1\f \n  f = 1 d / P \n = 1 / 2.5 \n = 0.4 m  ",
       "imgid": "0"
     },
     {
