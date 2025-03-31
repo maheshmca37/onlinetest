@@ -1,7 +1,7 @@
 //const listE1 = document.querySelector('ul');
 
-let duration = 1500;
-let maxQuestions=25;
+let duration = 3900;
+let maxQuestions=60;
 
 let currentQuestionIndex = 0;
 let loadedData = '';
@@ -183,7 +183,7 @@ document.getElementById("anxt-btn").onclick = setAnalysisNextQuestion;
  // document.getElementById("change-lang").onclick = setLanguage;
   const langSel = document.getElementById("change-lang");
   langSel.style.display= 'none';
-//document.getElementById("download-pdf").onclick = setDataForDownlaod;
+
 
 function setLanguage(){
 
@@ -310,7 +310,7 @@ document.getElementById("download-pdf").addEventListener("click", function(event
     const a = document.createElement('a');
     const url = URL.createObjectURL(blob);
     a.href = url;
-    a.download = 'result.html'; // Specify the download file name
+    a.download = 'Response.html'; // Specify the download file name
     document.body.appendChild(a);
 
     // Trigger the click event to download the file
